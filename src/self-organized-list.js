@@ -1,5 +1,5 @@
 class Node {
-    constructor(data) {
+    constructor(data=null, next=null,prev=null) {
         this.data = data;
         this.next = null;
         this.prev = null;
@@ -7,18 +7,25 @@ class Node {
 }
 
 class SelfOrganizedList {
-    constructor() {
+    constructor( ) {
         this.head = null;
         this.tail = null;
-        this.length=null;
+        this.length=0;
     }
 
     insert(data) {
-
-        var elem = new Node(data, null, null);
-        if (this.length===null){
-            this.head=elem;
+        if(this.length===null){
+                 var temp = new Node(data);
+            temp.prev = this.tail;
+            this.tail.next = temp;
+            this.tail = temp;
+        } else {
+            this.tail = new Node(data);
+            this.head = this.tail;
         }
+        this.length++;
+        return this;
+    
      
     }
 
