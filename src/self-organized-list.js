@@ -3,7 +3,6 @@ class Node {
         this.data = data;
         this.next = null;
         this.prev = null;
-        this.size=null
     }
 }
 
@@ -11,17 +10,17 @@ class SelfOrganizedList {
     constructor() {
         this.head = null;
         this.tail = null;
+        this.size=null;
     }
 
     insert(data) {
+       
 
       
     }
 
     size() {
-        if(this.head==null & this.tail==null){
-            this.size==null;
-        }
+       
     }
 
     at(index) {
@@ -45,7 +44,7 @@ class SelfOrganizedList {
     }
 
     reorganize(data) {
-
+       
     }
 
 }
