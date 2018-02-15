@@ -14,10 +14,10 @@ class SelfOrganizedList {
     }
 
     insert(data) {
-       if ( this.head==null && this.tail==null){
-            this.data=this.head;
-       }
+       if (this.size){
 
+
+       }
       
     }
 
@@ -26,7 +26,12 @@ class SelfOrganizedList {
     }
 
     at(index) {
-
+        if (this.size===null){
+            return true;
+        }
+        else {
+            return false;
+        }
     }
 
     findNode(data) {
