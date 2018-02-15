@@ -14,13 +14,17 @@ class SelfOrganizedList {
     }
 
     insert(data) {
-        
+
+        var elem = new Node(data, null, null);
+        if (this.length===null){
+            this.head=elem;
+        }
      
     }
 
     size() {
-        var len=this.length;
-       if (len===null){
+        
+       if (this.length===null){
             return 0;
         }
 
