@@ -14,7 +14,9 @@ class SelfOrganizedList {
     }
 
     insert(data) {
-       
+       if ( this.head==null && this.tail==null){
+            this.data=this.head;
+       }
 
       
     }
