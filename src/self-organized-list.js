@@ -10,27 +10,25 @@ class SelfOrganizedList {
     constructor() {
         this.head = null;
         this.tail = null;
-        this.size=null;
+        this.length=null;
     }
 
     insert(data) {
-       if (this.size){
-
-
-       }
-      
+        
+     
     }
 
     size() {
-       
+        var len=this.length;
+       if (len===null){
+            return 0;
+        }
+
     }
 
     at(index) {
-        if (this.size===null){
-            return true;
-        }
-        else {
-            return false;
+        if (this.length===null){
+            return null;
         }
     }
 
