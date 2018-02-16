@@ -14,8 +14,8 @@ class SelfOrganizedList {
     }
 
     insert(data) {
-        if(this.length===null){
-                 var temp = new Node(data);
+        if(this.size()){
+            var temp = new Node(data);
             temp.prev = this.tail;
             this.tail.next = temp;
             this.tail = temp;
@@ -29,17 +29,15 @@ class SelfOrganizedList {
     }
 
     size() {
-        
-       if (this.length===null){
-            return 0;
-        }
-
+  		if(this.head){
+  			return 0;
+  		}
     }
 
     at(index) {
-        if (this.length===null){
+        if (this.size){
             return null;
-        }
+        } 
     }
 
     findNode(data) {
