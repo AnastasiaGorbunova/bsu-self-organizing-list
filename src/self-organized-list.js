@@ -23,9 +23,8 @@ class SelfOrganizedList {
             this.tail = new Node(data);
             this.head = this.tail;
         }
-        this.length++;
+        
         return this;
-    
      
     }
 
