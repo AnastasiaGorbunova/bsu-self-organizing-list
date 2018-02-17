@@ -10,55 +10,55 @@ class SelfOrganizedList {
     constructor( ) {
         this.head = null;
         this.tail = null;
-        this.length=0;
+        this.size=0;
     }
 
     insert(data) {
-        if(this.length===null){
-                 var temp = new Node(data);
-            temp.prev = this.tail;
-            this.tail.next = temp;
-            this.tail = temp;
+        var temp = new Node(data);
+        if(this.head===null){
+            this.head=temp;
         } else {
-            this.tail = new Node(data);
-            this.head = this.tail;
+            this.tail=temp;
+            var current=this.head;
+            while (current.next===null){
+                current=current.next;
+            }
+            current.next=temp;
+            current.next.prev=current;
         }
         
-        return this;
+        return this.size++;
      
     }
 
     size() {
-  		if(this.head===null){
-  			return 0;
-  		} else {
-  			for (var i=1;this.head.next; i++){
-  				this.head=this.head.next;
-  			}
-  			return i;
-  		}
+        if(this.head===null){
+            return 0;
+        } 
+        else
+        {
+            return this.size;
+        }
     }
 
     at(index) {
-       if (this.head===null){
-            return null;
-        } 
+       
     }
 
     findNode(data) {
-    	if (this.head===null){
-    		return null;
-    	}
+        if (this.head===null){
+            return null;
+        }
     }
 
     toArray() {
-    	var arr=[]
-    	if (this.head===null){
-    		return arr;
-    	} 
+        var arr=[]
+        if (this.head===null){
+            return arr;
+        } 
     }
     removeAt(index) {
-
+        
     }
 
     moveToFront(node) {
@@ -66,7 +66,9 @@ class SelfOrganizedList {
     }
 
     reorganize(data) {
-       
+       if (this.head===null){
+        return false;
+       }
     }
 
 }
