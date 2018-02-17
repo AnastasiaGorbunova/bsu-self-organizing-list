@@ -15,12 +15,13 @@ class SelfOrganizedList {
 
     insert(data) {
         var temp = new Node(data);
+        this.tail=temp;
         if(this.head===null){
             this.head=temp;
         } else {
-            this.tail=temp;
+            
             var current=this.head;
-            while (current.next===null){
+            while (current.next){
                 current=current.next;
             }
             current.next=temp;
