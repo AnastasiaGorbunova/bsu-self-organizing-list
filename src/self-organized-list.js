@@ -10,35 +10,35 @@ class SelfOrganizedList {
     constructor( ) {
         this.head = null;
         this.tail = null;
-        this.size=0;
+        this.length=0;
     }
 
     insert(data) {
         var temp = new Node(data);
         this.tail=temp;
-        if(this.head===null){
+        if(this.head==null){
             this.head=temp;
         } else {
             
-            var current=this.head;
-            while (current.next){
-                current=current.next;
+            var currentNode=this.head;
+            while (currentNode.next){
+                currentNode=currentNode.next;
             }
-            current.next=temp;
-            current.next.prev=current;
+            currentNode.next=temp;
+            currentNode.next.prev=currentNode;
         }
         
-        return this.size++;
+        this.length++;
      
     }
 
     size() {
-        if(this.head===null){
+        if (this.head===null){
             return 0;
-        } 
+        }
         else
         {
-            return this.size;
+            return this.length;
         }
     }
 
@@ -47,9 +47,7 @@ class SelfOrganizedList {
     }
 
     findNode(data) {
-        if (this.head===null){
-            return null;
-        }
+        
     }
 
     toArray() {
