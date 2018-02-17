@@ -29,7 +29,7 @@ class SelfOrganizedList {
         }
         
         this.length++;
-        return temp; //may be 
+        return temp;
     }
 
     size() {
@@ -43,7 +43,16 @@ class SelfOrganizedList {
     }
 
     at(index) {
-       
+       if (index<0 || this.length===0|| index>=this.length){
+        return null;
+       }
+       var temp=this.head;
+       var count=0;
+       while (count<index){
+            count++;
+            temp=temp.next;
+       }
+       return temp.data;
     }
 
     findNode(data) {
@@ -59,34 +68,9 @@ class SelfOrganizedList {
         }
         return arr;
     }
-    removeAt(index) {/*
-        count=1;
-        length=this.length;
-        currentNode=this.head;
-        if (length === 0 || index < 1 || index > length) {
-        throw new Error();
-    }
-
-        if (index===1){
-            currentNode=currentNode.next;
-            if(!currentNode){
-                currentNode.prev=null;
-            }
-            else {
-                this.tail=null;
-            }
-            if (index===length) {
-                this.tail=this.tail.prev;
-                this.tail.next=null;
-            }
-            else {
-                while(count<index){
-                    currentNode = currentNode.next;
-                    count++;
-                }
-            }
-            this.length--;
-        }*/
+    removeAt(index) {
+        
+        
     }
 
     moveToFront(node) {
