@@ -75,8 +75,10 @@ class SelfOrganizedList {
     }
 
     removeAt(index) {
-
-
+        if (this.head=null){
+            return null;
+        }
+        
     }
 
     moveToFront(node) {
@@ -95,18 +97,16 @@ class SelfOrganizedList {
     }
 
     reorganize(data) {
+    var temp=this.findNode(data);
 
-
-   var temp=this.findNode(data);
-
-     if (temp==null){
-        return false;
-     }
-    else {
-        this.moveToFront(temp);
-        return true;
-        
-     }
+        if (temp==null){
+            return false;
+        }
+        else 
+        {
+            this.moveToFront(temp);
+            return true;
+            }
     
     }
 
