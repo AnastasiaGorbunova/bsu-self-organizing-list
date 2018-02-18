@@ -95,11 +95,21 @@ class SelfOrganizedList {
     }
 
     reorganize(data) {
-   /*  var node=new Node(data);
-     if (this.head==node){
+
+
+   var temp=this.findNode(data);
+
+     if (temp==null){
+        return false;
+     }
+    else {
+        this.moveToFront(temp);
         return true;
-     }*/
+        
+     }
+    
     }
+
 }
 
 module.exports={
