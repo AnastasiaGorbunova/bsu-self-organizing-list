@@ -75,24 +75,23 @@ class SelfOrganizedList {
     }
 
     removeAt(index) {
-      
+
 
     }
 
     moveToFront(node) {
-        var temp=this.head;
-       if (node==this.head){
-        
-       
-       if (node.next!=null){
-            temp.prev.next=temp.next;
-            temp.next.prev=temp.prev;
-        }else
-        {
-            temp.prev.next=null; 
-            this.tail = temp.prev; 
+
+      if(this.head==node){
+        return node;
+      }
+      if (this.tail == node ){
+            this.tail = this.tail.prev;
+            return node;
         }
-        }
+        node.prev.next = node.next;
+        node.next = this.head;
+        this.head = node;
+
     }
 
     reorganize(data) {
