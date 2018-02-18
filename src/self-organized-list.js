@@ -75,20 +75,32 @@ class SelfOrganizedList {
     }
 
     removeAt(index) {
-
+      
 
     }
 
     moveToFront(node) {
-
-    }
-
-    reorganize(data) {
-        if (this.head == null) {
-            return false;
+        var temp=this.head;
+       if (node==this.head){
+        
+       
+       if (node.next!=null){
+            temp.prev.next=temp.next;
+            temp.next.prev=temp.prev;
+        }else
+        {
+            temp.prev.next=null; 
+            this.tail = temp.prev; 
+        }
         }
     }
 
+    reorganize(data) {
+   /*  var node=new Node(data);
+     if (this.head==node){
+        return true;
+     }*/
+    }
 }
 
 module.exports={
