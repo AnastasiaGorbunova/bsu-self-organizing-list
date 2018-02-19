@@ -75,41 +75,47 @@ class SelfOrganizedList {
     }
 
     removeAt(index) {
-        if (this.head=null){
+        var temp = this.head;
+        if (this.head = null){
             return null;
         }
-        
+
     }
 
     moveToFront(node) {
-
-      if(this.head==node){
-        return node;
-      }
-      if (this.tail == node ){
-            this.tail = this.tail.prev;
+  
+        if(this.head == node){
             return node;
         }
-        node.prev.next = node.next;
+
+        if (this.tail == node) {
+            this.tail = node.prev;
+        }
+        else {
+            node.next.prev = node.prev;
+            node.prev.next = node.next;
+        }
+        this.head.prev = node;
         node.next = this.head;
-        this.head = node;
+        this.head = node;    
 
     }
 
     reorganize(data) {
-    var temp=this.findNode(data);
-
-        if (temp==null){
+        var node = this.findNode(data);
+        if(node == this.head) {
+            return true;
+        }
+        if(this.length == 0) {
             return false;
         }
-        else 
-        {
-            this.moveToFront(temp);
+        if(!node) {
+            return false;
+        } else {
+            this.moveToFront(node);
             return true;
-            }
-    
+        }
     }
-
 }
 
 module.exports={
